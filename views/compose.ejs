@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <%- include('./partials/header'); %>
+  </header>
+
+  <form action="/compose" method="POST" class="mx-4">
+    <div class="form-group my-4">
+      <label for="title">Title</label>
+      <input type="text" required autocomplete="off" pattern=".*\S+.*" title="add valid syntax" class="form-control" name="title" id="title">
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea name="content" required autocomplete="off" minlength="1" title="add valid syntax" class="form-control" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn btn-primary">Post</button>
+  </form>
+
+  <%- include('./partials/footer'); %>
+</body>
+</html>
