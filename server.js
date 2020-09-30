@@ -28,6 +28,24 @@ app.get('/',(req,res)=>{
    }
  })
 })
+/*Changing title for post request*/
+/*This will fix the problem regarding the post request.*/
+app.post('/compose',(req,res)=>{
+
+  post = new Blog ({
+    t: req.body.t,
+    c: req.body.c
+  })
+
+  post.save((e)=>{
+    if(e){
+      console.log(e);
+    }
+  })
+
+  res.redirect('/')
+})
+/*Changed*/
 
 app.get('/compose',(req,res)=>{
   res.render('compose')
@@ -62,7 +80,7 @@ app.get('/:id',(req,res)=>{
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
 
 app.listen(port,()=>{
