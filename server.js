@@ -8,7 +8,7 @@ app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 
 
-mongoose.connect('mongodb+srv://admin-amritanshu:amritanshu@cluster0.b5dqg.mongodb.net/blogDB', {useNewUrlParser: true, useUnifiedTopology: true});
+//connect mongoose
 
 const blogSchema = new mongoose.Schema({
   title:String,
